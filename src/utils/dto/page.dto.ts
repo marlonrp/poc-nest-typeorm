@@ -32,13 +32,13 @@ export class PageMetaDto {
 
 export class PageDto<T> {
   @ApiProperty({ isArray: true })
-  readonly data: T[];
+  readonly content: T[];
 
   @ApiProperty({ type: () => PageMetaDto })
   readonly meta: PageMetaDto;
 
   constructor(data: T[], itemCount: number, pageOptionsDto: PageOptionsDto) {
-    this.data = data;
+    this.content = data;
     this.meta = new PageMetaDto(pageOptionsDto, itemCount);
   }
 }
