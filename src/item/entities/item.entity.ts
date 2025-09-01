@@ -1,5 +1,4 @@
 import { ApiProperty } from '@nestjs/swagger';
-import { IsUUID } from 'class-validator';
 import { Category } from 'src/category/entities/category.entity';
 import {
   Column,
@@ -11,7 +10,6 @@ import {
 
 @Entity()
 export class Item {
-  @IsUUID()
   @PrimaryGeneratedColumn('uuid')
   @ApiProperty({ description: 'ID' })
   id: string;
