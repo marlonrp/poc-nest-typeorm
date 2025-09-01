@@ -27,7 +27,7 @@ export class ItemController {
 
   @Get()
   async findAll(
-    @Query(new ValidationPipe({ transform: true }))
+    @Query(new ValidationPipe({ transform: true })) // must convert query string to dto object
     pageOptionsDto: PageOptionsDto,
   ): Promise<PageDto<Item>> {
     return this.itemService.findAll(pageOptionsDto);

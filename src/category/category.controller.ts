@@ -27,7 +27,7 @@ export class CategoryController {
 
   @Get()
   findAll(
-    @Query(new ValidationPipe({ transform: true }))
+    @Query(new ValidationPipe({ transform: true })) // must convert query string to dto object
     pageOptionsDto: PageOptionsDto,
   ): Promise<PageDto<Category>> {
     return this.categoryService.findAll(pageOptionsDto);
